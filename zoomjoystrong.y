@@ -50,13 +50,13 @@ line:		LINE INT INT INT INT END_STATEMENT
 		{printf("%s %d %d %d\n", $1, $2, $3, $4, $5);
 
 		//checks if all the values are valid 
-		if ($2 <= 0 || $2 >= 1024)
+		if ($2 < 0 || $2 > 1024)
                         yyerror("First value is invalid.");
-                if ($3 <= 0 || $3 >= 768)
+                if ($3 < 0 || $3 > 768)
                         yyerror("Second value is invalid.");
-                if ($4 <= 0 || $4 >= 1024)
+                if ($4 < 0 || $4 > 1024)
                         yyerror("Third value is invalid.");
-		if ($5 <= 0 || $5 >= 768)
+		if ($5 < 0 || $5 > 768)
 			yyerror("Fourth value is invalid.");
 		
 		//if all the values are valid we call the line fincuton 
@@ -67,9 +67,9 @@ point:		POINT INT INT END_STATEMENT
 		{ printf("%s %d %d\n", $1, $2, $3); 
 		
 		//checks if all values are valid 
-		if ($2 <= 0 || $2 >= 1024)
+		if ($2 < 0 || $2 > 1024)
                         yyerror("First value is invalid.");
-                if ($3 <= 0 || $3 >= 768)
+                if ($3 < 0 || $3 > 768)
                         yyerror("Second value is invalid.");
   
 		//if all values are valid we call the point function 
@@ -80,11 +80,11 @@ circle:		CIRCLE INT INT INT END_STATEMENT
 		{ printf("%s %d %d %d\n", $1, $2, $3, $4);
 		
 		//checks if all values are valid 
-		if ($2 <= 0 || $2 >= 1024)
+		if ($2 < 0 || $2 > 1024)
                         yyerror("First value  is invalid.");
-                if ($3 <= 0 || $3 >= 768)
+                if ($3 < 0 || $3 > 768)
                         yyerror("Second value is invalid.");
-                if ($4 <= 0 || $4 >= 1024)
+                if ($4 < 0 || $4 > 1024)
                         yyerror("Third value is invalid.");
 		
 		//if all values are valid we call the circle function 
@@ -95,13 +95,13 @@ rectangle:	RECTANGLE INT INT INT INT END_STATEMENT
 		{ printf("%s %d %d %d %d\n", $1, $2, $3, $4, $5);
 		
 		//checks if all the values are valid
-		if ($2 <= 0 || $2 >= 1024)
+		if ($2 < 0 || $2 > 1024)
                         yyerror("First value is invalid.");
-                if ($3 <= 0 || $3 >= 768)
+                if ($3 < 0 || $3 > 768)
                         yyerror("Second value is invalid.");
-                if ($4 <= 0 || $4 >= 1024)
+                if ($4 < 0 || $4 > 1024)
                         yyerror("Third value is invalid.");
-		if ($5 <= 0 || $5 >= 768)
+		if ($5 < 0 || $5 > 768)
 			 yyerror("Fourth value is invalid.");
 		
 		//if all values are valid we call the rectangle function 
@@ -112,11 +112,11 @@ set_color:	SET_COLOR INT INT INT END_STATEMENT
 		{ printf("%s %d %d %d\n", $1, $2, $3, $4);	
 		
 		//checks if the values are valid 
-		if ($2 <= 0 || $2 >= 255)
+		if ($2 < 0 || $2 > 255)
 			yyerror("First value is invalid.");
-		if ($3 <= 0 || $3 >= 255)
+		if ($3 < 0 || $3 > 255)
 			yyerror("Second value is invalid.");
-		if ($4 <= 0 || $4 >= 255)
+		if ($4 < 0 || $4 > 255)
 			yyerror("Third value is invalid.");
 		
 		//if all values are valid we call the set color function 
