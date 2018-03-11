@@ -28,6 +28,6 @@
 [-]?[0-9]+                              {yylval.i = atoi(yytext); return INT;}
 [-]?[0-9]+\.[0-9]+                      {yylval.f = atof(yytext); return FLOAT;}
 [ \t\n]                                 ;//ignores whitespace, indent, and new line characters
-.                                       { printf("Input is Invalid");//if we have any characters not listed then the value is invalid
+.                                       { printf("Input is Invalid\n");//if we have any characters not listed then the value is invalid
                                         }
 %%
