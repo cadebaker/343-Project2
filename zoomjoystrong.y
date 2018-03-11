@@ -137,7 +137,6 @@ int main(int argc, char** argv){
 	setup();
 	//parses the file 
 	yyparse();
-	exit(0);
 	return 0;
 }
 void yyerror(const char* msg){
