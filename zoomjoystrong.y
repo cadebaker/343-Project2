@@ -50,11 +50,11 @@ line:		LINE INT INT INT INT END_STATEMENT
 		{printf("%s %d %d %d\n", $1, $2, $3, $4, $5);
 
 		//checks if all the values are valid 
-		if ($2 <= 0 || $2 >= 255)
+		if ($2 <= 0 || $2 >= 1024)
                         yyerror("First value is invalid.");
-                if ($3 <= 0 || $3 >= 1024)
+                if ($3 <= 0 || $3 >= 768)
                         yyerror("Second value is invalid.");
-                if ($4 <= 0 || $4 >= 768)
+                if ($4 <= 0 || $4 >= 1024)
                         yyerror("Third value is invalid.");
 		if ($5 <= 0 || $5 >= 768)
 			yyerror("Fourth value is invalid.");
